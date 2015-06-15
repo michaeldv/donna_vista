@@ -1,0 +1,662 @@
+extern void test_evaluate_pawns_suite__100(void);
+extern void test_evaluate_pawns_suite__110(void);
+extern void test_evaluate_pawns_suite__120(void);
+extern void test_evaluate_pawns_suite__200(void);
+extern void test_evaluate_pawns_suite__210(void);
+extern void test_evaluate_pawns_suite__220(void);
+extern void test_evaluate_pawns_suite__230(void);
+extern void test_evaluate_pawns_suite__240(void);
+extern void test_evaluate_pawns_suite__250(void);
+extern void test_evaluate_pawns_suite__300(void);
+extern void test_evaluate_pawns_suite__310(void);
+extern void test_evaluate_pawns_suite__420(void);
+extern void test_evaluate_pawns_suite__500(void);
+extern void test_evaluate_pawns_suite__505(void);
+extern void test_evaluate_pawns_suite__510(void);
+extern void test_evaluate_pawns_suite__520(void);
+extern void test_evaluate_pawns_suite__530(void);
+extern void test_evaluate_pawns_suite__540(void);
+extern void test_evaluate_pawns_suite__550(void);
+extern void test_evaluate_pawns_suite__560(void);
+extern void test_evaluate_pawns_suite__570(void);
+extern void test_position_exchange_suite__000(void);
+extern void test_position_exchange_suite__010(void);
+extern void test_position_exchange_suite__020(void);
+extern void test_evaluate_suite__000(void);
+extern void test_evaluate_suite__010(void);
+extern void test_evaluate_suite__020(void);
+extern void test_evaluate_suite__030(void);
+extern void test_evaluate_suite__040(void);
+extern void test_evaluate_suite__050(void);
+extern void test_evaluate_suite__060(void);
+extern void test_move_suite__000(void);
+extern void test_move_suite__010(void);
+extern void test_move_suite__020(void);
+extern void test_move_suite__030(void);
+extern void test_move_suite__040(void);
+extern void test_move_suite__100(void);
+extern void test_move_suite__110(void);
+extern void test_move_suite__120(void);
+extern void test_move_suite__130(void);
+extern void test_move_suite__200(void);
+extern void test_move_suite__210(void);
+extern void test_move_suite__220(void);
+extern void test_move_suite__300(void);
+extern void test_move_suite__310(void);
+extern void test_move_suite__320(void);
+extern void test_move_suite__330(void);
+extern void test_move_suite__340(void);
+extern void test_position_targets_suite__000(void);
+extern void test_position_targets_suite__010(void);
+extern void test_position_targets_suite__020(void);
+extern void test_position_targets_suite__030(void);
+extern void test_position_targets_suite__040(void);
+extern void test_search_suite__000(void);
+extern void test_search_suite__020(void);
+extern void test_search_suite__030(void);
+extern void test_search_suite__040(void);
+extern void test_search_suite__050(void);
+extern void test_search_suite__060(void);
+extern void test_search_suite__070(void);
+extern void test_search_suite__080(void);
+extern void test_search_suite__090(void);
+extern void test_search_suite__100(void);
+extern void test_search_suite__110(void);
+extern void test_search_suite__120(void);
+extern void test_search_suite__130(void);
+extern void test_search_suite__140(void);
+extern void test_search_suite__150(void);
+extern void test_search_suite__160(void);
+extern void test_search_suite__170(void);
+extern void test_search_suite__180(void);
+extern void test_search_suite__190(void);
+extern void test_search_suite__195(void);
+extern void test_search_suite__196(void);
+extern void test_search_suite__200(void);
+extern void test_search_suite__210(void);
+extern void test_search_suite__220(void);
+extern void test_search_suite__230(void);
+extern void test_search_suite__240(void);
+extern void test_search_suite__250(void);
+extern void test_search_suite__260(void);
+extern void test_search_suite__270(void);
+extern void test_search_suite__280(void);
+extern void test_search_suite__290(void);
+extern void test_search_suite__300(void);
+extern void test_search_suite__400(void);
+extern void test_search_suite__410(void);
+extern void test_search_suite__420(void);
+extern void test_search_suite__430(void);
+extern void test_search_suite__440(void);
+extern void test_search_suite__450(void);
+extern void test_bitmask_suite__000(void);
+extern void test_bitmask_suite__010(void);
+extern void test_bitmask_suite__020(void);
+extern void test_bitmask_suite__030(void);
+extern void test_bitmask_suite__040(void);
+extern void test_bitmask_suite__050(void);
+extern void test_bitmask_suite__060(void);
+extern void test_bitmask_suite__070(void);
+extern void test_bitmask_suite__100(void);
+extern void test_bitmask_suite__110(void);
+extern void test_bitmask_suite__120(void);
+extern void test_bitmask_suite__130(void);
+extern void test_bitmask_suite__140(void);
+extern void test_bitmask_suite__150(void);
+extern void test_bitmask_suite__160(void);
+extern void test_bitmask_suite__170(void);
+extern void test_bitmask_suite__180(void);
+extern void test_bitmask_suite__200(void);
+extern void test_generate_suite__010(void);
+extern void test_generate_suite__110(void);
+extern void test_generate_suite__120(void);
+extern void test_generate_suite__130(void);
+extern void test_generate_suite__140(void);
+extern void test_generate_suite__150(void);
+extern void test_generate_suite__200(void);
+extern void test_generate_suite__210(void);
+extern void test_position_cache_suite__010(void);
+extern void test_position_cache_suite__020(void);
+extern void test_position_suite__000(void);
+extern void test_position_suite__010(void);
+extern void test_position_suite__020(void);
+extern void test_position_suite__200(void);
+extern void test_position_suite__210(void);
+extern void test_position_suite__220(void);
+extern void test_position_suite__230(void);
+extern void test_position_suite__240(void);
+extern void test_position_suite__250(void);
+extern void test_generate_checks_suite__000(void);
+extern void test_generate_checks_suite__010(void);
+extern void test_generate_checks_suite__020(void);
+extern void test_generate_checks_suite__030(void);
+extern void test_generate_checks_suite__040(void);
+extern void test_generate_checks_suite__050(void);
+extern void test_generate_checks_suite__060(void);
+extern void test_generate_checks_suite__070(void);
+extern void test_generate_checks_suite__080(void);
+extern void test_generate_checks_suite__090(void);
+extern void test_generate_checks_suite__100(void);
+extern void test_generate_checks_suite__110(void);
+extern void test_generate_checks_suite__120(void);
+extern void test_generate_checks_suite__130(void);
+extern void test_generate_checks_suite__140(void);
+extern void test_generate_checks_suite__150(void);
+extern void test_generate_checks_suite__160(void);
+extern void test_generate_checks_suite__170(void);
+extern void test_generate_checks_suite__180(void);
+extern void test_game_suite__000(void);
+extern void test_generate_evasions_suite__270(void);
+extern void test_generate_evasions_suite__280(void);
+extern void test_generate_evasions_suite__290(void);
+extern void test_generate_evasions_suite__300(void);
+extern void test_generate_evasions_suite__310(void);
+extern void test_generate_evasions_suite__320(void);
+extern void test_generate_evasions_suite__330(void);
+extern void test_generate_evasions_suite__340(void);
+extern void test_generate_evasions_suite__350(void);
+extern void test_generate_evasions_suite__360(void);
+extern void test_generate_evasions_suite__365(void);
+extern void test_generate_evasions_suite__370(void);
+extern void test_generate_evasions_suite__380(void);
+extern void test_generate_evasions_suite__385(void);
+extern void test_generate_evasions_suite__386(void);
+extern void test_generate_evasions_suite__390(void);
+extern void test_generate_evasions_suite__400(void);
+extern void test_generate_evasions_suite__405(void);
+extern void test_generate_evasions_suite__410(void);
+extern void test_generate_evasions_suite__420(void);
+extern void test_generate_evasions_suite__430(void);
+extern void test_generate_evasions_suite__440(void);
+extern void test_generate_evasions_suite__450(void);
+extern void test_generate_evasions_suite__460(void);
+extern void test_position_moves_suite__010(void);
+extern void test_position_moves_suite__030(void);
+extern void test_position_moves_suite__040(void);
+extern void test_position_moves_suite__050(void);
+extern void test_position_moves_suite__060(void);
+extern void test_position_moves_suite__070(void);
+extern void test_position_moves_suite__080(void);
+extern void test_position_moves_suite__081(void);
+extern void test_position_moves_suite__082(void);
+extern void test_position_moves_suite__083(void);
+extern void test_position_moves_suite__084(void);
+extern void test_position_moves_suite__085(void);
+extern void test_position_moves_suite__100(void);
+extern void test_position_moves_suite__110(void);
+extern void test_position_moves_suite__120(void);
+extern void test_position_moves_suite__130(void);
+extern void test_position_moves_suite__200(void);
+extern void test_position_moves_suite__210(void);
+extern void test_position_moves_suite__220(void);
+extern void test_position_moves_suite__230(void);
+extern void test_position_moves_suite__240(void);
+extern void test_position_moves_suite__250(void);
+extern void test_position_moves_suite__260(void);
+extern void test_position_moves_suite__270(void);
+extern void test_position_moves_suite__280(void);
+extern void test_position_moves_suite__281(void);
+extern void test_position_moves_suite__282(void);
+extern void test_position_moves_suite__283(void);
+extern void test_position_moves_suite__284(void);
+extern void test_position_moves_suite__285(void);
+extern void test_position_moves_suite__286(void);
+extern void test_position_moves_suite__287(void);
+extern void test_position_moves_suite__288(void);
+extern void test_position_moves_suite__289(void);
+extern void test_position_moves_suite__290(void);
+extern void test_position_moves_suite__291(void);
+extern void test_position_moves_suite__292(void);
+extern void test_position_moves_suite__300(void);
+extern void test_position_moves_suite__310(void);
+extern void test_position_moves_suite__320(void);
+extern void test_position_moves_suite__330(void);
+extern void test_position_moves_suite__340(void);
+extern void test_position_moves_suite__350(void);
+extern void test_position_moves_suite__400(void);
+extern void test_position_moves_suite__410(void);
+extern void test_init_suite__000x(void);
+extern void test_init_suite__010x(void);
+extern void test_init_suite__020x(void);
+extern void test_init_suite__030x(void);
+extern void test_init_suite__040x(void);
+extern void test_init_suite__000(void);
+extern void test_init_suite__010(void);
+extern void test_init_suite__015(void);
+extern void test_init_suite__020(void);
+extern void test_init_suite__030(void);
+extern void test_init_suite__040(void);
+extern void test_init_suite__050(void);
+extern void test_init_suite__060(void);
+extern void test_init_suite__070(void);
+extern void test_init_suite__080(void);
+extern void test_init_suite__090(void);
+extern void test_init_suite__100(void);
+extern void test_init_suite__110(void);
+extern void test_init_suite__120(void);
+extern void test_init_suite__130(void);
+extern void test_init_suite__140(void);
+extern void test_init_suite__150(void);
+extern void test_generate_moves_suite__000(void);
+extern void test_generate_moves_suite__020(void);
+extern void test_generate_moves_suite__030(void);
+extern void test_generate_moves_suite__031(void);
+extern void test_generate_moves_suite__040(void);
+extern void test_generate_moves_suite__050(void);
+extern void test_generate_moves_suite__060(void);
+extern void test_generate_moves_suite__070(void);
+extern void test_generate_moves_suite__080(void);
+extern void test_generate_moves_suite__090(void);
+extern void test_generate_moves_suite__100(void);
+extern void test_generate_moves_suite__200(void);
+extern void test_generate_moves_suite__210(void);
+extern void test_generate_moves_suite__220(void);
+extern void test_generate_moves_suite__230(void);
+extern void test_generate_captures_suite__000(void);
+extern void test_generate_captures_suite__010(void);
+extern void test_generate_captures_suite__020(void);
+extern void test_generate_captures_suite__030(void);
+extern void test_generate_captures_suite__100(void);
+extern void test_generate_captures_suite__110(void);
+extern void test_generate_captures_suite__120(void);
+static const struct clar_func _clar_cb_evaluate_pawns_suite[] = {
+    { "100", &test_evaluate_pawns_suite__100 },
+    { "110", &test_evaluate_pawns_suite__110 },
+    { "120", &test_evaluate_pawns_suite__120 },
+    { "200", &test_evaluate_pawns_suite__200 },
+    { "210", &test_evaluate_pawns_suite__210 },
+    { "220", &test_evaluate_pawns_suite__220 },
+    { "230", &test_evaluate_pawns_suite__230 },
+    { "240", &test_evaluate_pawns_suite__240 },
+    { "250", &test_evaluate_pawns_suite__250 },
+    { "300", &test_evaluate_pawns_suite__300 },
+    { "310", &test_evaluate_pawns_suite__310 },
+    { "420", &test_evaluate_pawns_suite__420 },
+    { "500", &test_evaluate_pawns_suite__500 },
+    { "505", &test_evaluate_pawns_suite__505 },
+    { "510", &test_evaluate_pawns_suite__510 },
+    { "520", &test_evaluate_pawns_suite__520 },
+    { "530", &test_evaluate_pawns_suite__530 },
+    { "540", &test_evaluate_pawns_suite__540 },
+    { "550", &test_evaluate_pawns_suite__550 },
+    { "560", &test_evaluate_pawns_suite__560 },
+    { "570", &test_evaluate_pawns_suite__570 }
+};
+static const struct clar_func _clar_cb_position_exchange_suite[] = {
+    { "000", &test_position_exchange_suite__000 },
+    { "010", &test_position_exchange_suite__010 },
+    { "020", &test_position_exchange_suite__020 }
+};
+static const struct clar_func _clar_cb_evaluate_suite[] = {
+    { "000", &test_evaluate_suite__000 },
+    { "010", &test_evaluate_suite__010 },
+    { "020", &test_evaluate_suite__020 },
+    { "030", &test_evaluate_suite__030 },
+    { "040", &test_evaluate_suite__040 },
+    { "050", &test_evaluate_suite__050 },
+    { "060", &test_evaluate_suite__060 }
+};
+static const struct clar_func _clar_cb_move_suite[] = {
+    { "000", &test_move_suite__000 },
+    { "010", &test_move_suite__010 },
+    { "020", &test_move_suite__020 },
+    { "030", &test_move_suite__030 },
+    { "040", &test_move_suite__040 },
+    { "100", &test_move_suite__100 },
+    { "110", &test_move_suite__110 },
+    { "120", &test_move_suite__120 },
+    { "130", &test_move_suite__130 },
+    { "200", &test_move_suite__200 },
+    { "210", &test_move_suite__210 },
+    { "220", &test_move_suite__220 },
+    { "300", &test_move_suite__300 },
+    { "310", &test_move_suite__310 },
+    { "320", &test_move_suite__320 },
+    { "330", &test_move_suite__330 },
+    { "340", &test_move_suite__340 }
+};
+static const struct clar_func _clar_cb_position_targets_suite[] = {
+    { "000", &test_position_targets_suite__000 },
+    { "010", &test_position_targets_suite__010 },
+    { "020", &test_position_targets_suite__020 },
+    { "030", &test_position_targets_suite__030 },
+    { "040", &test_position_targets_suite__040 }
+};
+static const struct clar_func _clar_cb_search_suite[] = {
+    { "000", &test_search_suite__000 },
+    { "020", &test_search_suite__020 },
+    { "030", &test_search_suite__030 },
+    { "040", &test_search_suite__040 },
+    { "050", &test_search_suite__050 },
+    { "060", &test_search_suite__060 },
+    { "070", &test_search_suite__070 },
+    { "080", &test_search_suite__080 },
+    { "090", &test_search_suite__090 },
+    { "100", &test_search_suite__100 },
+    { "110", &test_search_suite__110 },
+    { "120", &test_search_suite__120 },
+    { "130", &test_search_suite__130 },
+    { "140", &test_search_suite__140 },
+    { "150", &test_search_suite__150 },
+    { "160", &test_search_suite__160 },
+    { "170", &test_search_suite__170 },
+    { "180", &test_search_suite__180 },
+    { "190", &test_search_suite__190 },
+    { "195", &test_search_suite__195 },
+    { "196", &test_search_suite__196 },
+    { "200", &test_search_suite__200 },
+    { "210", &test_search_suite__210 },
+    { "220", &test_search_suite__220 },
+    { "230", &test_search_suite__230 },
+    { "240", &test_search_suite__240 },
+    { "250", &test_search_suite__250 },
+    { "260", &test_search_suite__260 },
+    { "270", &test_search_suite__270 },
+    { "280", &test_search_suite__280 },
+    { "290", &test_search_suite__290 },
+    { "300", &test_search_suite__300 },
+    { "400", &test_search_suite__400 },
+    { "410", &test_search_suite__410 },
+    { "420", &test_search_suite__420 },
+    { "430", &test_search_suite__430 },
+    { "440", &test_search_suite__440 },
+    { "450", &test_search_suite__450 }
+};
+static const struct clar_func _clar_cb_bitmask_suite[] = {
+    { "000", &test_bitmask_suite__000 },
+    { "010", &test_bitmask_suite__010 },
+    { "020", &test_bitmask_suite__020 },
+    { "030", &test_bitmask_suite__030 },
+    { "040", &test_bitmask_suite__040 },
+    { "050", &test_bitmask_suite__050 },
+    { "060", &test_bitmask_suite__060 },
+    { "070", &test_bitmask_suite__070 },
+    { "100", &test_bitmask_suite__100 },
+    { "110", &test_bitmask_suite__110 },
+    { "120", &test_bitmask_suite__120 },
+    { "130", &test_bitmask_suite__130 },
+    { "140", &test_bitmask_suite__140 },
+    { "150", &test_bitmask_suite__150 },
+    { "160", &test_bitmask_suite__160 },
+    { "170", &test_bitmask_suite__170 },
+    { "180", &test_bitmask_suite__180 },
+    { "200", &test_bitmask_suite__200 }
+};
+static const struct clar_func _clar_cb_generate_suite[] = {
+    { "010", &test_generate_suite__010 },
+    { "110", &test_generate_suite__110 },
+    { "120", &test_generate_suite__120 },
+    { "130", &test_generate_suite__130 },
+    { "140", &test_generate_suite__140 },
+    { "150", &test_generate_suite__150 },
+    { "200", &test_generate_suite__200 },
+    { "210", &test_generate_suite__210 }
+};
+static const struct clar_func _clar_cb_position_cache_suite[] = {
+    { "010", &test_position_cache_suite__010 },
+    { "020", &test_position_cache_suite__020 }
+};
+static const struct clar_func _clar_cb_position_suite[] = {
+    { "000", &test_position_suite__000 },
+    { "010", &test_position_suite__010 },
+    { "020", &test_position_suite__020 },
+    { "200", &test_position_suite__200 },
+    { "210", &test_position_suite__210 },
+    { "220", &test_position_suite__220 },
+    { "230", &test_position_suite__230 },
+    { "240", &test_position_suite__240 },
+    { "250", &test_position_suite__250 }
+};
+static const struct clar_func _clar_cb_generate_checks_suite[] = {
+    { "000", &test_generate_checks_suite__000 },
+    { "010", &test_generate_checks_suite__010 },
+    { "020", &test_generate_checks_suite__020 },
+    { "030", &test_generate_checks_suite__030 },
+    { "040", &test_generate_checks_suite__040 },
+    { "050", &test_generate_checks_suite__050 },
+    { "060", &test_generate_checks_suite__060 },
+    { "070", &test_generate_checks_suite__070 },
+    { "080", &test_generate_checks_suite__080 },
+    { "090", &test_generate_checks_suite__090 },
+    { "100", &test_generate_checks_suite__100 },
+    { "110", &test_generate_checks_suite__110 },
+    { "120", &test_generate_checks_suite__120 },
+    { "130", &test_generate_checks_suite__130 },
+    { "140", &test_generate_checks_suite__140 },
+    { "150", &test_generate_checks_suite__150 },
+    { "160", &test_generate_checks_suite__160 },
+    { "170", &test_generate_checks_suite__170 },
+    { "180", &test_generate_checks_suite__180 }
+};
+static const struct clar_func _clar_cb_game_suite[] = {
+    { "000", &test_game_suite__000 }
+};
+static const struct clar_func _clar_cb_generate_evasions_suite[] = {
+    { "270", &test_generate_evasions_suite__270 },
+    { "280", &test_generate_evasions_suite__280 },
+    { "290", &test_generate_evasions_suite__290 },
+    { "300", &test_generate_evasions_suite__300 },
+    { "310", &test_generate_evasions_suite__310 },
+    { "320", &test_generate_evasions_suite__320 },
+    { "330", &test_generate_evasions_suite__330 },
+    { "340", &test_generate_evasions_suite__340 },
+    { "350", &test_generate_evasions_suite__350 },
+    { "360", &test_generate_evasions_suite__360 },
+    { "365", &test_generate_evasions_suite__365 },
+    { "370", &test_generate_evasions_suite__370 },
+    { "380", &test_generate_evasions_suite__380 },
+    { "385", &test_generate_evasions_suite__385 },
+    { "386", &test_generate_evasions_suite__386 },
+    { "390", &test_generate_evasions_suite__390 },
+    { "400", &test_generate_evasions_suite__400 },
+    { "405", &test_generate_evasions_suite__405 },
+    { "410", &test_generate_evasions_suite__410 },
+    { "420", &test_generate_evasions_suite__420 },
+    { "430", &test_generate_evasions_suite__430 },
+    { "440", &test_generate_evasions_suite__440 },
+    { "450", &test_generate_evasions_suite__450 },
+    { "460", &test_generate_evasions_suite__460 }
+};
+static const struct clar_func _clar_cb_position_moves_suite[] = {
+    { "010", &test_position_moves_suite__010 },
+    { "030", &test_position_moves_suite__030 },
+    { "040", &test_position_moves_suite__040 },
+    { "050", &test_position_moves_suite__050 },
+    { "060", &test_position_moves_suite__060 },
+    { "070", &test_position_moves_suite__070 },
+    { "080", &test_position_moves_suite__080 },
+    { "081", &test_position_moves_suite__081 },
+    { "082", &test_position_moves_suite__082 },
+    { "083", &test_position_moves_suite__083 },
+    { "084", &test_position_moves_suite__084 },
+    { "085", &test_position_moves_suite__085 },
+    { "100", &test_position_moves_suite__100 },
+    { "110", &test_position_moves_suite__110 },
+    { "120", &test_position_moves_suite__120 },
+    { "130", &test_position_moves_suite__130 },
+    { "200", &test_position_moves_suite__200 },
+    { "210", &test_position_moves_suite__210 },
+    { "220", &test_position_moves_suite__220 },
+    { "230", &test_position_moves_suite__230 },
+    { "240", &test_position_moves_suite__240 },
+    { "250", &test_position_moves_suite__250 },
+    { "260", &test_position_moves_suite__260 },
+    { "270", &test_position_moves_suite__270 },
+    { "280", &test_position_moves_suite__280 },
+    { "281", &test_position_moves_suite__281 },
+    { "282", &test_position_moves_suite__282 },
+    { "283", &test_position_moves_suite__283 },
+    { "284", &test_position_moves_suite__284 },
+    { "285", &test_position_moves_suite__285 },
+    { "286", &test_position_moves_suite__286 },
+    { "287", &test_position_moves_suite__287 },
+    { "288", &test_position_moves_suite__288 },
+    { "289", &test_position_moves_suite__289 },
+    { "290", &test_position_moves_suite__290 },
+    { "291", &test_position_moves_suite__291 },
+    { "292", &test_position_moves_suite__292 },
+    { "300", &test_position_moves_suite__300 },
+    { "310", &test_position_moves_suite__310 },
+    { "320", &test_position_moves_suite__320 },
+    { "330", &test_position_moves_suite__330 },
+    { "340", &test_position_moves_suite__340 },
+    { "350", &test_position_moves_suite__350 },
+    { "400", &test_position_moves_suite__400 },
+    { "410", &test_position_moves_suite__410 }
+};
+static const struct clar_func _clar_cb_init_suite[] = {
+    { "000x", &test_init_suite__000x },
+    { "010x", &test_init_suite__010x },
+    { "020x", &test_init_suite__020x },
+    { "030x", &test_init_suite__030x },
+    { "040x", &test_init_suite__040x },
+    { "000", &test_init_suite__000 },
+    { "010", &test_init_suite__010 },
+    { "015", &test_init_suite__015 },
+    { "020", &test_init_suite__020 },
+    { "030", &test_init_suite__030 },
+    { "040", &test_init_suite__040 },
+    { "050", &test_init_suite__050 },
+    { "060", &test_init_suite__060 },
+    { "070", &test_init_suite__070 },
+    { "080", &test_init_suite__080 },
+    { "090", &test_init_suite__090 },
+    { "100", &test_init_suite__100 },
+    { "110", &test_init_suite__110 },
+    { "120", &test_init_suite__120 },
+    { "130", &test_init_suite__130 },
+    { "140", &test_init_suite__140 },
+    { "150", &test_init_suite__150 }
+};
+static const struct clar_func _clar_cb_generate_moves_suite[] = {
+    { "000", &test_generate_moves_suite__000 },
+    { "020", &test_generate_moves_suite__020 },
+    { "030", &test_generate_moves_suite__030 },
+    { "031", &test_generate_moves_suite__031 },
+    { "040", &test_generate_moves_suite__040 },
+    { "050", &test_generate_moves_suite__050 },
+    { "060", &test_generate_moves_suite__060 },
+    { "070", &test_generate_moves_suite__070 },
+    { "080", &test_generate_moves_suite__080 },
+    { "090", &test_generate_moves_suite__090 },
+    { "100", &test_generate_moves_suite__100 },
+    { "200", &test_generate_moves_suite__200 },
+    { "210", &test_generate_moves_suite__210 },
+    { "220", &test_generate_moves_suite__220 },
+    { "230", &test_generate_moves_suite__230 }
+};
+static const struct clar_func _clar_cb_generate_captures_suite[] = {
+    { "000", &test_generate_captures_suite__000 },
+    { "010", &test_generate_captures_suite__010 },
+    { "020", &test_generate_captures_suite__020 },
+    { "030", &test_generate_captures_suite__030 },
+    { "100", &test_generate_captures_suite__100 },
+    { "110", &test_generate_captures_suite__110 },
+    { "120", &test_generate_captures_suite__120 }
+};
+static struct clar_suite _clar_suites[] = {
+    {
+        "bitmask::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_bitmask_suite, 18, 1
+    },
+    {
+        "evaluate::pawns::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_evaluate_pawns_suite, 21, 1
+    },
+    {
+        "evaluate::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_evaluate_suite, 7, 1
+    },
+    {
+        "game::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_game_suite, 1, 1
+    },
+    {
+        "generate::captures::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_generate_captures_suite, 7, 1
+    },
+    {
+        "generate::checks::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_generate_checks_suite, 19, 1
+    },
+    {
+        "generate::evasions::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_generate_evasions_suite, 24, 1
+    },
+    {
+        "generate::moves::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_generate_moves_suite, 15, 1
+    },
+    {
+        "generate::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_generate_suite, 8, 1
+    },
+    {
+        "init::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_init_suite, 22, 1
+    },
+    {
+        "move::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_move_suite, 17, 1
+    },
+    {
+        "position::cache::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_position_cache_suite, 2, 1
+    },
+    {
+        "position::exchange::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_position_exchange_suite, 3, 1
+    },
+    {
+        "position::moves::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_position_moves_suite, 45, 1
+    },
+    {
+        "position::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_position_suite, 9, 1
+    },
+    {
+        "position::targets::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_position_targets_suite, 5, 1
+    },
+    {
+        "search::suite",
+        { NULL, NULL },
+        { NULL, NULL },
+        _clar_cb_search_suite, 38, 1
+    }
+};
+static const size_t _clar_suite_count = 17;
+static const size_t _clar_callback_count = 261;
