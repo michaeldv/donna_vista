@@ -64,10 +64,10 @@ Position *position() {
 // current tree node to match the position.
 //------------------------------------------------------------------------------
 static void get_ready() {
-    game.rootpv.size = 0;
-    memset(game.rootpv.moves, '\0', sizeof(game.rootpv.moves));
-    memset(game.killers, '\0', sizeof(game.killers));
-    memset(game.history, '\0', sizeof(game.history));
+    memset(&game.rootpv, '\0', sizeof(game.rootpv));
+    memset(&game.pv, '\0', sizeof(game.pv));
+    memset(&game.killers, '\0', sizeof(game.killers));
+    memset(&game.history, '\0', sizeof(game.history));
     game.deepening = false;
     game.improving = true;
     game.volatility = 0.0;
