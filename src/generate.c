@@ -45,7 +45,7 @@ MoveGen *reset(MoveGen *self) {
 //------------------------------------------------------------------------------
 MoveGen *discard(MoveGen *self) {
     ScoredMove *src = &self->list[self->head];
-    memcpy((src - 1), src, (self->tail - self->head) * sizeof(ScoredMove));
+    memmove((src - 1), src, (self->tail - self->head) * sizeof(ScoredMove));
     self->head--;
     self->tail--;
 
@@ -191,42 +191,6 @@ MoveGen *quick_rank(MoveGen *self) {
         } else {
             self->list[i].score = good(move);
         }
-    }
-
-    return sort(self);
-}
-
-//------------------------------------------------------------------------------
-MoveGen *root_rank(MoveGen *self, Move best) {
-    if (self->tail < 2) {
-        return self;
-    }
-
-    // Find the best move and assign it the highest score.
-    int top = -1, killer = -1, semikiller = -1, highest = -Checkmate;
-
-    for (int i = self->head; i < self->tail; i++) {
-        ScoredMove *current = &self->list[i];
-        if (current->move == best) {
-            top = i;
-        } else if (current->move == game.killers[self->ply][0]) {
-            killer = i;
-        } else if (current->move == game.killers[self->ply][1]) {
-            semikiller = i;
-        }
-        current->score += good(current->move) >> 3;
-        if (current->score > highest) {
-            highest = current->score;
-        }
-    }
-    if (top != -1) {
-        self->list[top].score = highest + 10;
-    }
-    if (killer != -1) {
-        self->list[killer].score = highest + 2;
-    }
-    if (semikiller != -1) {
-        self->list[semikiller].score = highest + 1;
     }
 
     return sort(self);

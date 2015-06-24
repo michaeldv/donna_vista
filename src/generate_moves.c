@@ -32,13 +32,17 @@ MoveGen *generate_root_moves(MoveGen *self) {
     return quick_rank(valid_only(self));
 }
 
+// Copies last move returned by next_move() to the top of the list shifting
+// remaining moves down. Head/tail pointers remain unchanged.
 //------------------------------------------------------------------------------
 MoveGen *rearrange_root_moves(MoveGen *self) {
-    if (game.rootpv.size > 0) {
-        return root_rank(reset(self), game.rootpv.moves[0]);
+    if (self->head > 0) {
+        ScoredMove best = self->list[self->head - 1];
+        memmove(&self->list[1], &self->list[0], (self->head - 1) * sizeof(ScoredMove));
+        self->list[0] = best;
     }
 
-    return root_rank(reset(self), (Move)0);
+    return self;
 }
 
 //------------------------------------------------------------------------------
