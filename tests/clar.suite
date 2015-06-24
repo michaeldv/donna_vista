@@ -252,6 +252,7 @@ extern void test_generate_moves_suite__200(void);
 extern void test_generate_moves_suite__210(void);
 extern void test_generate_moves_suite__220(void);
 extern void test_generate_moves_suite__230(void);
+extern void test_generate_moves_suite__300(void);
 extern void test_generate_captures_suite__000(void);
 extern void test_generate_captures_suite__010(void);
 extern void test_generate_captures_suite__020(void);
@@ -543,7 +544,8 @@ static const struct clar_func _clar_cb_generate_moves_suite[] = {
     { "200", &test_generate_moves_suite__200 },
     { "210", &test_generate_moves_suite__210 },
     { "220", &test_generate_moves_suite__220 },
-    { "230", &test_generate_moves_suite__230 }
+    { "230", &test_generate_moves_suite__230 },
+    { "300", &test_generate_moves_suite__300 }
 };
 static const struct clar_func _clar_cb_generate_captures_suite[] = {
     { "000", &test_generate_captures_suite__000 },
@@ -601,7 +603,7 @@ static struct clar_suite _clar_suites[] = {
         "generate::moves::suite",
         { NULL, NULL },
         { NULL, NULL },
-        _clar_cb_generate_moves_suite, 15, 1
+        _clar_cb_generate_moves_suite, 16, 1
     },
     {
         "generate::suite",
@@ -659,4 +661,4 @@ static struct clar_suite _clar_suites[] = {
     }
 };
 static const size_t _clar_suite_count = 17;
-static const size_t _clar_callback_count = 261;
+static const size_t _clar_callback_count = 262;

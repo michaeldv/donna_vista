@@ -167,3 +167,26 @@ void test_generate_moves_suite__230(void) {
     pawn_captures(black, Black);
     cl_assert_equal_s(all_moves(black, buffer), "[g2xf1Q g2xf1R g2xf1B g2xf1N g2-g1Q g2-g1R g2-g1B g2-g1N g2xh1Q g2xh1R g2xh1B g2xh1N]");
 }
+
+// Rearrange root moves.
+void test_generate_moves_suite__300(void) {
+    char buffer[256];
+    new_game();
+    MoveGen *gen = new_move_gen(start());
+    valid_only(generate_moves(gen));
+
+    // Pick from the middle.
+    gen->head = 10; // e2-e4
+    reset(rearrange_root_moves(gen));
+    cl_assert_equal_s(all_moves(gen, buffer), "[e2-e4 a2-a3 a2-a4 b2-b3 b2-b4 c2-c3 c2-c4 d2-d3 d2-d4 e2-e3 f2-f3 f2-f4 g2-g3 g2-g4 h2-h3 h2-h4 Nb1-a3 Nb1-c3 Ng1-f3 Ng1-h3]");
+
+    // Pick first one.
+    gen->head = 1;
+    reset(rearrange_root_moves(gen));
+    cl_assert_equal_s(all_moves(gen, buffer), "[e2-e4 a2-a3 a2-a4 b2-b3 b2-b4 c2-c3 c2-c4 d2-d3 d2-d4 e2-e3 f2-f3 f2-f4 g2-g3 g2-g4 h2-h3 h2-h4 Nb1-a3 Nb1-c3 Ng1-f3 Ng1-h3]");
+
+    // Pick last one.
+    gen->head = gen->tail;
+    reset(rearrange_root_moves(gen));
+    cl_assert_equal_s(all_moves(gen, buffer), "[Ng1-h3 e2-e4 a2-a3 a2-a4 b2-b3 b2-b4 c2-c3 c2-c4 d2-d3 d2-d4 e2-e3 f2-f3 f2-f4 g2-g3 g2-g4 h2-h3 h2-h4 Nb1-a3 Nb1-c3 Ng1-f3]");
+}
