@@ -2,12 +2,12 @@
 // Use of this source code is governed by a MIT-style license that can
 // be found in the LICENSE file.
 
-#define king(color)      ((Piece)(color | King))
-#define queen(color)     ((Piece)(color | Queen))
-#define rook(color)      ((Piece)(color | Rook))
-#define bishop(color)    ((Piece)(color | Bishop))
-#define knight(color)    ((Piece)(color | Knight))
-#define pawn(color)      ((Piece)(color | Pawn))
+#define king(color)      ((Piece)((color) | King))
+#define queen(color)     ((Piece)((color) | Queen))
+#define rook(color)      ((Piece)((color) | Rook))
+#define bishop(color)    ((Piece)((color) | Bishop))
+#define knight(color)    ((Piece)((color) | Knight))
+#define pawn(color)      ((Piece)((color) | Pawn))
 #define poly(p, square)  polyglotRandom[polyglotBase[p] + square]
 #define color(piece)     ((piece) & 1)
 #define kind(piece)      ((piece) & 0xFE)
@@ -20,14 +20,14 @@
 #define is_knight(piece) (kind(piece) == Knight)
 #define is_pawn(piece)   (kind(piece) == Pawn)
 
-// Returns colorless ASCII code for the piece.
+// Returns uppercase ASCII character representing the piece.
 char character(Piece p) {
     static char pch[] = { '\0', '\0', '\0', '\0', 'N', 'N', 'B', 'B', 'R', 'R', 'Q', 'Q', 'K', 'K' };
     return pch[p];
 }
 
+// Returns Unicode chess character representing the piece.
 char *glyph(Piece p) {
-    // (unused) static char *plain[] = { " ", " ", "P", "p", "N", "n", "B", "b", "R", "r", "Q", "q", "K", "k" };
     static char *glyphs[] = {
         " ",
         " ",
@@ -44,6 +44,5 @@ char *glyph(Piece p) {
         "\xE2\x99\x94", // King
         "\xE2\x99\x9A"  // Black King
     };
-
     return glyphs[p];
 }
