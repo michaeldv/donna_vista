@@ -29,7 +29,6 @@ void save_good(int depth, Move move) {
 // Quiescence search.
 //------------------------------------------------------------------------------
 int search_quiescence(Position *self, int alpha, int beta, int iteration, bool in_check) {
-    //printf("search_qui: alpha %d beta %d iter %d check %s\n", alpha, beta, iteration, in_check ? "true" : "false");
     int score = 0, ply = PLY();
 
     // Reset principal variation.
@@ -60,13 +59,11 @@ int search_quiescence(Position *self, int alpha, int beta, int iteration, bool i
     int static_score = alpha;
     CacheEntry *cached = probe(self);
     if (cached) {
-        // printf("search_qui: cached.depth %d cached.flags %d cached.score %d\n", cached->depth, cached->flags, cached->score);
         if ((int)cached->depth >= depth) {
             static_score = uncache((int)cached->score, ply);
             if ((cached->flags == cacheExact && principal) ||
                 (cached->flags == cacheBeta  && static_score >= beta) ||
                 (cached->flags == cacheAlpha && static_score <= alpha)) {
-                //printf("search_qui: cached.depth %d cached.flags %d cached.score %d -> staticScore %d\n", cached->depth, cached->flags, cached->score, static_score);
                 return static_score;
             }
         }
@@ -74,9 +71,7 @@ int search_quiescence(Position *self, int alpha, int beta, int iteration, bool i
 
     if (!in_check) {
         static_score = evaluate(self);
-        //printf("staticScore %d\n%s\n", static_score, position_string(self));
         if (static_score >= beta) {
-	        //printf("search_qui: alpha %d beta %d move 0 score %d depth %d ply %d flags %d\n", alpha, beta, static_score, depth, ply, cacheBeta);
             store(self, (Move)0, static_score, depth, ply, cacheBeta);
             return static_score;
         }
@@ -87,14 +82,23 @@ int search_quiescence(Position *self, int alpha, int beta, int iteration, bool i
 
     // Generate check evasions or captures.
     MoveGen *gen = new_gen(self, ply);
-    quick_rank(in_check ? generate_evasions(gen) : generate_captures(gen));
+    if (in_check) {
+        generate_evasions(gen);
+    } else {
+        generate_captures(gen);
+        if (iteration < 1) {
+            generate_checks(gen);
+        }
+    }
+    quick_rank(gen);
 
     uint8 cache_flags = cacheAlpha;
     Move best_move = (Move)0;
     int move_count = 0;
 
     for (Move move = next_move(gen); move; move = next_move(gen)) {
-        if ((!in_check && exchange(self, move) < 0) || !is_valid(gen, move)) {
+        Piece cap = capture(move);
+        if ((!in_check && cap && exchange(self, move) < 0) || !is_valid(gen, move)) {
             continue;
         }
 
@@ -103,7 +107,7 @@ int search_quiescence(Position *self, int alpha, int beta, int iteration, bool i
         bool give_check = is_in_check(position, position->color);
 
         // Prune useless captures -- but make sure it's not a capture move that checks.
-        if (!in_check && !give_check && !principal && !is_promo(move) && static_score + pieceValue[capture(move)] + 72 < alpha) {
+        if (!in_check && !give_check && !principal && cap && !is_promo(move) && static_score + pieceValue[cap] + 72 < alpha) {
             undo_last_move(position);
             continue;
         }
@@ -114,7 +118,6 @@ int search_quiescence(Position *self, int alpha, int beta, int iteration, bool i
             alpha = score;
             best_move = move;
             if (alpha >= beta) {
-		        //printf("search_qui(1): alpha %d beta %d move %lu score %d depth %d ply %d flags %d\n", alpha, beta, best_move, score, depth, ply, cacheBeta);
                 store(self, best_move, score, depth, ply, cacheBeta);
                 return score;
             }
@@ -125,43 +128,11 @@ int search_quiescence(Position *self, int alpha, int beta, int iteration, bool i
         }
     }
 
-    if (!in_check && iteration < 1) {
-        gen = new_gen(self, ply);
-        quick_rank(generate_checks(gen));
-
-        for (Move move = next_move(gen); move; move = next_move(gen)) {
-            if (exchange(self, move) < 0 || !is_valid(gen, move)) {
-                continue;
-            }
-
-            Position *position = make_move(self, move);
-            move_count++; game.qnodes++;
-            score = -search_quiescence(position, -beta, -alpha, iteration + 1, is_in_check(position, position->color));
-            undo_last_move(position);
-
-            if (score > alpha) {
-                alpha = score;
-                best_move = move;
-                if (alpha >= beta) {
-    		        //printf("search_qui(2): alpha %d beta %d move %lu score %d depth %d ply %d flags %d\n", alpha, beta, best_move, score, depth, ply, cacheBeta);
-                    store(self, best_move, score, depth, ply, cacheBeta);
-                    return score;
-                }
-                cache_flags = cacheExact;
-            }
-            if (time_control(game.qnodes)) {
-                return alpha;
-            }
-        }
-    }
-
     score = alpha;
     if (in_check && move_count == 0) {
         score = -Checkmate + ply;
     }
-    //printf("search_qui(out): alpha %d beta %d move %lu score %d depth %d ply %d flags %d\n", alpha, beta, best_move, score, depth, ply, cache_flags);
     store(self, best_move, score, depth, ply, cache_flags);
 
-    //printf("search_qui: alpha %d beta %d depth %d --> score %d\n", alpha, beta, depth, score);
     return score;
 }

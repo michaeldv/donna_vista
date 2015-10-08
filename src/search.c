@@ -9,21 +9,20 @@ int search(Position *self, int alpha, int beta, int depth) {
     // printf("search: alpha %d beta %d depth %d\n", alpha, beta, depth);
     int score = 0;
     bool in_check = is_in_check(self, self->color);
-    uint8 cacheFlags = cacheAlpha;
 
     // Root move generator makes sure all generated moves are valid. The
     // best move found so far is always the first one we search.
     MoveGen *gen = new_root_gen(self, depth);
     if (depth == 1) {
         generate_root_moves(gen);
+    } else if (depth == 11) { // Skip moves that failed all iterations so far.
+        cleanup_root_moves(gen, depth);
     } else {
-        rearrange_root_moves(gen);
-        if (depth == 10) { // Skip moves that failed all iterations so far.
-            cleanup_root_moves(gen, depth);
-        }
+        reset(gen);
     }
 
     int move_count = 0;
+    int root_alpha = alpha;
     Move best_move = (Move)0;
 
     for (Move move = next_move(gen); move; move = next_move(gen)) {
@@ -35,7 +34,7 @@ int search(Position *self, int alpha, int beta, int depth) {
 
         // Search depth extension.
         int new_depth = depth - 1;
-        if (is_in_check(position, self->color^1)) { // Give check.
+        if (is_in_check(position, self->color ^ 1)) { // Give check.
             new_depth++;
         }
 
@@ -61,9 +60,9 @@ int search(Position *self, int alpha, int beta, int depth) {
 
         if (move_count == 1 || score > alpha) {
             best_move = move;
-            cacheFlags = cacheExact;
             save_best(0, move);
             score_move(gen, depth, score);
+            rearrange_root_moves(gen);
 
             if (move_count > 1) {
                 game.volatility++; //\\ debug("# New move %s depth %d volatility %.2f\n", move, depth, game.volatility)
@@ -71,9 +70,9 @@ int search(Position *self, int alpha, int beta, int depth) {
 
             alpha = max(score, alpha);
             if (alpha >= beta) {
-                cacheFlags = cacheBeta;
-                break;
+                break; // Tap out.
             }
+            store(self, best_move, score, depth, PLY(), cacheBeta);
         } else {
             score_move(gen, depth, -depth);
         }
@@ -81,7 +80,7 @@ int search(Position *self, int alpha, int beta, int depth) {
 
 
     if (move_count == 0) {
-        score = (in_check ? -Checkmate : 0);
+        score = (in_check ? -Checkmate : 0); // Chackmate or Stalemate.
         //TODO if engine.uci {
         //TODO     engine.uciScore(depth, score, alpha, beta)
         //TODO }
@@ -93,7 +92,8 @@ int search(Position *self, int alpha, int beta, int depth) {
     }
 
     score = alpha;
-    store(self, best_move, score, depth, PLY(), cacheFlags);
+    store_delta(self, best_move, score, depth, PLY(), root_alpha, beta);
+
     //TODO if engine.uci {
     //TODO     engine.uciScore(depth, score, alpha, beta)
     //TODO }
