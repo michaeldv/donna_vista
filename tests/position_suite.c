@@ -3,25 +3,25 @@
 // be found in the LICENSE file.
 
 void test_position_suite__000(void) {
-	setup("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    setup("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     Position *p = start();
-	cl_check(p->color == White);
-	cl_check(p->castles == 0x0F);
-	cl_check(p->enpassant == 0);
-	cl_check(p->king[White] == E1);
-	cl_check(p->king[Black] == E8);
-	cl_check(p->outposts[Pawn] == (bit[A2]|bit[B2]|bit[C2]|bit[D2]|bit[E2]|bit[F2]|bit[G2]|bit[H2]));
-	cl_check(p->outposts[Knight] == (bit[B1]|bit[G1]));
-	cl_check(p->outposts[Bishop] == (bit[C1]|bit[F1]));
-	cl_check(p->outposts[Rook] == (bit[A1]|bit[H1]));
-	cl_check(p->outposts[Queen] == bit[D1]);
-	cl_check(p->outposts[King] == bit[E1]);
-	cl_check(p->outposts[BlackPawn] == (bit[A7]|bit[B7]|bit[C7]|bit[D7]|bit[E7]|bit[F7]|bit[G7]|bit[H7]));
-	cl_check(p->outposts[BlackKnight] == (bit[B8]|bit[G8]));
-	cl_check(p->outposts[BlackBishop] == (bit[C8]|bit[F8]));
-	cl_check(p->outposts[BlackRook] == (bit[A8]|bit[H8]));
-	cl_check(p->outposts[BlackQueen] == bit[D8]);
-	cl_check(p->outposts[BlackKing] == bit[E8]);
+    cl_check(p->color == White);
+    cl_check(p->castles == 0x0F);
+    cl_check(p->enpassant == 0);
+    cl_check(p->king[White] == E1);
+    cl_check(p->king[Black] == E8);
+    cl_check(p->outposts[Pawn] == (bit[A2]|bit[B2]|bit[C2]|bit[D2]|bit[E2]|bit[F2]|bit[G2]|bit[H2]));
+    cl_check(p->outposts[Knight] == (bit[B1]|bit[G1]));
+    cl_check(p->outposts[Bishop] == (bit[C1]|bit[F1]));
+    cl_check(p->outposts[Rook] == (bit[A1]|bit[H1]));
+    cl_check(p->outposts[Queen] == bit[D1]);
+    cl_check(p->outposts[King] == bit[E1]);
+    cl_check(p->outposts[BlackPawn] == (bit[A7]|bit[B7]|bit[C7]|bit[D7]|bit[E7]|bit[F7]|bit[G7]|bit[H7]));
+    cl_check(p->outposts[BlackKnight] == (bit[B8]|bit[G8]));
+    cl_check(p->outposts[BlackBishop] == (bit[C8]|bit[F8]));
+    cl_check(p->outposts[BlackRook] == (bit[A8]|bit[H8]));
+    cl_check(p->outposts[BlackQueen] == bit[D8]);
+    cl_check(p->outposts[BlackKing] == bit[E8]);
 }
 
 // Castles, no en-passant.

@@ -1,10 +1,10 @@
-// Copyright (c) 7084-7085 by Michael Dvorkin. All Rights Reserved.
+// Copyright (c) 2014-2015 by Michael Dvorkin. All Rights Reserved.
 // Use of this source code is governed by a MIT-style license that can
 // be found in the LICENSE file.
 
 #include "donna_vista.h"
 
-// Express 7083 for Windows Desktop
+// Visual Studio Express
 // https://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx
 
 int main(int argc, char *argv[]) {

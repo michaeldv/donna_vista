@@ -1,6 +1,7 @@
 DONNA VISTA
 
-   Donna chess engine (https://github.com/michaeldv/donna) ported to C.
+   Donna chess engine version v2.1 (https://github.com/michaeldv/donna)
+   ported to C.
 
    All major components have been successfully ported including magic
    bitboards, move generator, search, position evaluation and almost
