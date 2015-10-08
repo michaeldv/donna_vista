@@ -74,6 +74,20 @@ Position *store(Position *self, Move move, int score, int depth, int ply, uint8 
 }
 
 //------------------------------------------------------------------------------
+Position *store_delta(Position *self, Move move, int score, int depth, int ply, int alpha, int beta) {
+    uint8 cache_flags = cacheNone;
+
+    if (score > alpha) {
+        cache_flags |= cacheBeta;
+    }
+    if (score < beta) {
+        cache_flags |= cacheAlpha;
+    }
+
+    return store(self, move, score, depth, ply, cache_flags);
+}
+
+//------------------------------------------------------------------------------
 CacheEntry *probe(Position *self) {
     if (game.cache && game.csize > 0) {
         uint64 index = self->id & (uint64)(game.csize / sizeof(CacheEntry) - 1);

@@ -64,10 +64,10 @@ typedef struct timeval Timestamp;
 #define singleBishops      0x20  // Sides might have bishops on opposite color squares.
 
 // Position cache flags.
-#define cachedNone         0x00
-#define cacheExact         0x01
-#define cacheAlpha         0x02 // Upper bound.
-#define cacheBeta          0x04 // Lower bound.
+#define cacheNone          0x00
+#define cacheAlpha         0x01 // Upper bound.
+#define cacheBeta          0x02 // Lower bound.
+#define cacheExact         0x03 // cacheAlpha | cacheBeta
 
 // Game pieces.
 enum _Piece {
