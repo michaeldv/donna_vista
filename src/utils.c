@@ -29,6 +29,18 @@
 #define fixed_time() (engine.options.move_time > 0)
 #define varying_time() (engine.options.move_time == 0)
 
+#if !defined(timersub)
+    #define timersub(a, b, result)                          \
+    do {                                                    \
+        (result)->tv_sec = (a)->tv_sec - (b)->tv_sec;       \
+        (result)->tv_usec = (a)->tv_usec - (b)->tv_usec;    \
+        if ((result)->tv_usec < 0) {                        \
+            --(result)->tv_sec;                             \
+            (result)->tv_usec += 1000000;                   \
+        }                                                   \
+    } while (0)
+#endif
+
 // Flips the square verically for white (ex. E2 becomes E7).
 //------------------------------------------------------------------------------
 int flip(uint8 color, int square) {
@@ -52,6 +64,7 @@ int uncache(int score, int ply) {
     return score;
 }
 
+//------------------------------------------------------------------------------
 Timestamp now() {
     Timestamp timestamp;
 
