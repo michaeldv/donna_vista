@@ -1,0 +1,32 @@
+DONNA VISTA
+
+   Donna chess engine (https://github.com/michaeldv/donna) ported to C.
+
+   All major components have been successfully ported including magic
+   bitboards, move generator, search, position evaluation and almost
+   entire test suite along with the "mate in X moves" solver.
+
+
+TO-DO
+
+   - Port interactive REPL. 
+   - Implement time controls.
+   - Add UCI protocol support.
+   - Make it compile on Windows and Linux in addition to Mac OS X.
+
+
+PERFORMANCE
+
+   Donna Vista evaluates chess positions about twice as fast as the
+   original Go version.
+
+
+CURRENT STATUS
+
+   Work in progress.
+
+
+LICENSE
+
+   Copyright (c) 2014-2015 Michael Dvorkin
+   Donna Vista is freely distributable under the terms of MIT license.
